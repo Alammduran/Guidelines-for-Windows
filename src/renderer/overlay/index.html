@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pauta Overlay</title>
+    <style>
+      /* --thickness is in physical pixels; --dpr is set at runtime by useDpr. */
+      :root { --thickness: 1; --dpr: 1; }
+      html, body, #root { margin: 0; width: 100%; height: 100%; overflow: hidden; background: transparent; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./main.tsx"></script>
+  </body>
+</html>

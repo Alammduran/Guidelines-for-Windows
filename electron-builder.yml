@@ -1,0 +1,27 @@
+appId: com.pauta.app
+productName: Pauta
+directories:
+  buildResources: resources
+  output: dist
+# React, Zustand etc. are bundled into out/ by electron-vite, so the app ships no node_modules.
+files:
+  - out/**
+  - resources/**
+  - package.json
+  - '!**/*.map'
+asar: true
+# The UI is English-only; Chromium's other 50+ locale packs are ~48MB of dead weight.
+electronLanguages:
+  - en-US
+# Tray icons are loaded by file path at runtime.
+asarUnpack:
+  - resources/**
+win:
+  icon: resources/icon.ico
+  target:
+    - nsis
+    - portable
+nsis:
+  artifactName: ${productName}-${version}-setup.${ext}
+portable:
+  artifactName: ${productName}-${version}-portable.${ext}
